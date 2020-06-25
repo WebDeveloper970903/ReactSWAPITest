@@ -1,38 +1,79 @@
-.App {
+.main-div {
+  background: url('./assets/backGround.PNG');
+  width: 100vw;
+  height: 100vh;
+  background-repeat: round;
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+
+.btn-new-game {
+  background: #39a4f9;
+  width: 8em;
+  height: 4em;
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  position: absolute;
+  top: 55vh;
+  left: calc(50vw - 4em);
+  cursor: pointer;
+  z-index: 3;
+}
+
+.ship-div {
+  background: url('./assets/ship.PNG');
+  width: 11em;
+  height: 12em;
+  background-repeat: round;
+  animation: runningAnimation;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ship-div span {
+  font-size: 2em;
+  position: absolute;
+  top: 5.5em;
+  left: 2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@keyframes runningAnimation {
+  0%   {transform: scale(0.94);}
+  12%   {transform: scale(0.95);}
+  25%  {transform: scale(0.97);}
+  37%  {transform: scale(0.98);}
+  50%  {transform: scale(1);}
+  64%  {transform: scale(0.98);}
+  75%  {transform: scale(0.97);}
+  88%  {transform: scale(0.96);}
+  95% {transform: scale(0.95);}
+  100% {transform: scale(0.94);}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.winner-div {
   color: white;
+  font-weight: bolder;
+  font-size: 2.5em;
+  text-align: center;
+  padding-top: 5em;
 }
 
-.App-link {
-  color: #61dafb;
+.ship-image-div {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  width: 100vw;
+  top: 25em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.round-result-div {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  width: 100vw;
+  top: 5em;
+  text-align: center;
 }
